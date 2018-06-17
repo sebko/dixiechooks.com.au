@@ -17,16 +17,6 @@ const Navbar = () => (
           Products
         </Link>
       </div>
-      <div className="navbar-end">
-        <a
-          className="navbar-item"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">Facebook</span>
-        </a>
-      </div>
     </div>
   </nav>
 )

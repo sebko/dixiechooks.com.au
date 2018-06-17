@@ -1,15 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import './all.sass'
+
 import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { ThemeProvider } from 'emotion-theming'
 
 import Navbar from '../components/Navbar'
-import './all.sass'
+import theme from '../constants/theme'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
+    <Helmet title="Dixie Chooks" />
     <Navbar />
-    <div>{children()}</div>
+    <ThemeProvider theme={theme}>
+      <div>{children()}</div>
+    </ThemeProvider>
   </div>
 )
 

@@ -2,49 +2,78 @@ import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled, { css } from 'react-emotion'
-import hero from '../../static/img/chooks-large2.jpg'
-import Img from 'gatsby-image'
+import hero from '../img/hero.jpg'
 
-const Wrapper = styled('section')`
+// const Wrapper = styled('section')`
+//   position: relative;
+//   min-height: 300px;
+// `
+//
+// const BgImg = styled('img')`
+//   background-image: url(${hero});
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   z-index: -1;
+//   min-height: 300px;
+//   height: auto;
+//   @media (min-width: ${props => props.theme.responsive.small}) {
+//     height: ${props => props.height || 'auto'};
+//   }
+//   & > img {
+//     object-fit: ${props => props.fit || 'cover'} !important;
+//     object-position: ${props => props.position || '50% 50%'} !important;
+//   }
+//   &::before {
+//     content: '';
+//     background: rgba(0, 0, 0, 0.25);
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     height: 100%;
+//     width: 100%;
+//     z-index: 1;
+//   }
+// `
+//
+// const Title = styled('h1')`
+//   font-size: 3em;
+//   text-transform: capitalize;
+//   font-weight: 600;
+//   position: absolute;
+//   width: 100%;
+//   max-width: ${props => props.theme.sizes.maxWidthCentered};
+//   padding: 0 1rem;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   text-align: center;
+//   color: white;
+// `
+//
+// const Hero = props => (
+//   <Wrapper>
+//     <div style={{ position: 'relative' }}>
+//       <BgImg height={props.height} />
+//       <Title>Dixie Chooks</Title>
+//     </div>
+//   </Wrapper>
+// )
+
+const Img = styled('img')`
+  background-image: url(${hero});
+  width: 100vw;
+  height: calc(100vh - 52px);
   position: relative;
-  min-height: 300px;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
-
-const BgImg = styled(Img)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-  min-height: 300px;
-  height: auto;
-  @media (min-width: ${props => props.theme.responsive.small}) {
-    height: ${props => props.height || 'auto'};
-  }
-  & > img {
-    object-fit: ${props => props.fit || 'cover'} !important;
-    object-position: ${props => props.position || '50% 50%'} !important;
-  }
-  &::before {
-    content: '';
-    background: rgba(0, 0, 0, 0.25);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-  }
-`
-
-const Hero = props => (
-  <Wrapper>
-    <BgImg />
-    <span>hello</span>
-  </Wrapper>
-)
 
 export default class IndexPage extends React.Component {
   render() {
@@ -53,7 +82,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <React.Fragment>
-        <Hero />
+        <Img />
         <section className="section">
           <div className="container">
             <div className="content">
