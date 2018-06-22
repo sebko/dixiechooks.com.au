@@ -15,7 +15,7 @@ const trippykeyframe = keyframes`
 const Img = styled('img')`
   background-image: url(${hero});
   width: 100vw;
-  height: calc(100vh - 52px);
+  height: 400px;
   position: relative;
   background-size: cover;
   background-position: bottom;
@@ -24,6 +24,9 @@ const Img = styled('img')`
   align-items: center;
   min-width: 100%;
   min-height: 100%;
+  @media (min-width: 426px) {
+    height: calc(100vh - 88px);
+  }
 `
 
 const trippy = css`
