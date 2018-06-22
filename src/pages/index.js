@@ -1,9 +1,17 @@
 import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styled, { css } from 'react-emotion'
+import styled, { css, keyframes } from 'react-emotion'
 import hero from '../img/hero.jpg'
 
+const trippykeyframe = keyframes`
+  from {
+    filter: hue-rotate();
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+`
 const Img = styled('img')`
   background-image: url(${hero});
   width: 100vw;
@@ -14,16 +22,31 @@ const Img = styled('img')`
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 100%;
+  min-height: 100%;
+`
+
+const trippy = css`
+  animation: ${trippykeyframe} 10s ease infinite;
 `
 
 export default class IndexPage extends React.Component {
+  state = {
+    isTrippy: false,
+  }
+  toggleTrippy = () => {
+    this.setState(({ isTrippy }) => ({ isTrippy: !isTrippy }))
+  }
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
 
     return (
       <React.Fragment>
-        <Img />
+        <Img
+          onClick={this.toggleTrippy}
+          className={this.state.isTrippy && trippy}
+        />
         <section className="section">
           <div className="container">
             <div className="content">

@@ -36,6 +36,18 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-emotion',
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Reenie Beanie`],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        include: /svg-icons/,
+      },
+    },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }
