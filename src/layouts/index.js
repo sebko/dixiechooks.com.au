@@ -10,7 +10,12 @@ import theme from '../constants/theme'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Dixie Chooks" />
+    <Helmet title="Dixie Chooks">
+      <script
+        charset="utf-8"
+        src="https://widget.bandsintown.com/main.min.js"
+      />
+    </Helmet>
     <Navbar />
     <ThemeProvider theme={theme}>
       <div>{children()}</div>
